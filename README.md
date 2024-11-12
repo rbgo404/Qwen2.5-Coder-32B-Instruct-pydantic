@@ -4,7 +4,7 @@ It features a dense transformer architecture with 32.5 billion parameters, 64 la
 
 ## TL;DR:
 - Deployment of Qwen2.5-Coder-32B-Instruct model using [vllm](https://github.com/vllm-project/vllm).
-- You can expect an average tokens/sec of `78.27` and a latency of `3.05 sec` for generating a text of `256` tokens. This setup has an average cold start time of `30.43 sec`.
+- You can expect an average tokens/sec of `21.32` and a latency of `10.32 sec` for generating a text of `256` tokens. This setup has an average cold start time of `40.17 seconds`.
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.
