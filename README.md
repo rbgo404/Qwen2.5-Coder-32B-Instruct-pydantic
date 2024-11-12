@@ -1,8 +1,9 @@
 # Tutorial - Deploy Qwen2.5-Coder-32B-Instruct using Inferless
-[Ministral-8B-Instruct](https://huggingface.co/qwen/Qwen2.5-Coder-32B-Instruct) is an LLM developed by Mistral AI, specifically designed for instruction-based tasks. It features a dense transformer architecture with 8 billion parameters, 36 layers, context window of 128k tokens and vocabulary size of 131k, using the V3-Tekken tokenizer which allows it to process extensive inputs effectively. The model supports function calling, enhancing its ability to perform specific tasks based on user instructions.
+[Qwen2.5-Coder-32B-Instruct](https://huggingface.co/qwen/Qwen2.5-Coder-32B-Instruct) is a SOTA coder LLM developed by Alibaba Cloud's Qwen team. This model is part of the Qwen2.5 series and is tailored for instruction-based tasks, particularly in code generation, reasoning, and repair.
+It features a dense transformer architecture with 32.5 billion parameters, 64 layers, and supports a context length of up to 131,072 tokens, enabling it to handle extensive inputs effectively. The model utilizes the RoPE (Rotary Position Embedding) mechanism, SwiGLU activation functions, RMSNorm normalization, and Attention QKV bias to enhance its performance. Additionally, Qwen2.5-Coder-32B-Instruct supports function calling, enhancing its ability to perform specific tasks based on user instructions.  
 
 ## TL;DR:
-- Deployment of Ministral-8B-Instruct model using [vllm](https://github.com/vllm-project/vllm).
+- Deployment of Qwen2.5-Coder-32B-Instruct model using [vllm](https://github.com/vllm-project/vllm).
 - You can expect an average tokens/sec of `78.27` and a latency of `3.05 sec` for generating a text of `256` tokens. This setup has an average cold start time of `30.43 sec`.
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
@@ -22,9 +23,6 @@ This will create a copy of the repository in your own GitHub account, allowing y
 To access the custom runtime window in Inferless, simply navigate to the sidebar and click on the Create new Runtime button. A pop-up will appear.
 
 Next, provide a suitable name for your custom runtime and proceed by uploading the **inferless-runtime-config.yaml** file given above. Finally, ensure you save your changes by clicking on the save button.
-
-### Add Your Hugging Face Access Token
-Go into the `inferless.yaml` and replace `<YOUR_HUGGINGFACE_ACCESS_TOKEN>` with your hugging face access token. Make sure to check the repo is private to protect your hugging face token.
 
 ### Import the Model in Inferless
 Log in to your inferless account, select the workspace you want the model to be imported into and click the `Add a custom model` button.
@@ -48,7 +46,7 @@ curl --location '<your_inference_url>' \
         {
           "name": "prompt",
           "shape": [1],
-          "data": ["What is deep learning?"],
+          "data": ["Implement a function to check if a given number is a prime number."],
           "datatype": "BYTES"
         },
         {
