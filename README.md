@@ -1,5 +1,5 @@
-# Tutorial - Deploy Ministral-8B-Instruct using Inferless
-[Ministral-8B-Instruct](https://huggingface.co/mistralai/Ministral-8B-Instruct-2410) is an LLM developed by Mistral AI, specifically designed for instruction-based tasks. It features a dense transformer architecture with 8 billion parameters, 36 layers, context window of 128k tokens and vocabulary size of 131k, using the V3-Tekken tokenizer which allows it to process extensive inputs effectively. The model supports function calling, enhancing its ability to perform specific tasks based on user instructions.
+# Tutorial - Deploy Qwen2.5-Coder-32B-Instruct using Inferless
+[Ministral-8B-Instruct](https://huggingface.co/qwen/Qwen2.5-Coder-32B-Instruct) is an LLM developed by Mistral AI, specifically designed for instruction-based tasks. It features a dense transformer architecture with 8 billion parameters, 36 layers, context window of 128k tokens and vocabulary size of 131k, using the V3-Tekken tokenizer which allows it to process extensive inputs effectively. The model supports function calling, enhancing its ability to perform specific tasks based on user instructions.
 
 ## TL;DR:
 - Deployment of Ministral-8B-Instruct model using [vllm](https://github.com/vllm-project/vllm).

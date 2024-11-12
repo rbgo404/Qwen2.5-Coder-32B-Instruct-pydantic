@@ -3,7 +3,7 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'example': ["What is deep learning?"]
+        'example': ["Implement a function to check if a given number is a prime number."]
     },
     "temperature": {
         'datatype': 'FP32',
