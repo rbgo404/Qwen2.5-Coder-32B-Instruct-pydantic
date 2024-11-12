@@ -5,6 +5,12 @@ INPUT_SCHEMA = {
         'shape': [1],
         'example': ["Implement a function to check if a given number is a prime number."]
     },
+    "system_prompt": {
+        'datatype': 'STRING',
+        'required': False,
+        'shape': [1],
+        'example': ["You are a helpful coding bot."]
+    },
     "temperature": {
         'datatype': 'FP32',
         'required': False,
