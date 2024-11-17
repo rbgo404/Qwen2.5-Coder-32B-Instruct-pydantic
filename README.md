@@ -105,6 +105,7 @@ Open the `app.py` file. This contains the main code for inference. It has three 
 ```python
 def infer(self, inputs):
     prompts = inputs["prompt"]
+    system_prompt = inputs.get("system_prompt","You are a helpful coding bot.")
     temperature = inputs.get("temperature",0.7)
     top_p = inputs.get("top_p",0.1)
     repetition_penalty = inputs.get("repetition_penalty",1.18)
