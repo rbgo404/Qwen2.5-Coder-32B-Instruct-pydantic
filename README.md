@@ -50,6 +50,12 @@ curl --location '<your_inference_url>' \
           "datatype": "BYTES"
         },
         {
+          "name": "system_prompt",
+          "shape": [1],
+          "data": ["You are a helpful coding bot."],
+          "datatype": "BYTES"
+        },
+        {
           "name": "temperature",
           "optional": true,
           "shape": [1],
