@@ -9,7 +9,7 @@ It features a dense transformer architecture with 32.5 billion parameters, 64 la
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.
 - Custom runtime creation with necessary system and Python packages.
-- Model import via GitHub with `input_schema.py` file.
+- Model import via GitHub with `Pydantic models`.
 - Recommended GPU: NVIDIA A100 for optimal performance.
 - Custom runtime selection in advanced configuration.
 - Final review and deployment on the Inferless platform.
@@ -92,31 +92,6 @@ curl --location '<your_inference_url>' \
         }
       ]
     }'
-```
-
----
-## Customizing the Code
-Open the `app.py` file. This contains the main code for inference. It has three main functions, initialize, infer and finalize.
-
-**Initialize** -  This function is executed during the cold start and is used to initialize the model. If you have any custom configurations or settings that need to be applied during the initialization, make sure to add them in this function.
-
-**Infer** - This function is where the inference happens. The argument to this function `inputs`, is a dictionary containing all the input parameters. The keys are the same as the name given in inputs. Refer to [input](https://docs.inferless.com/model-import/input-output-schema) for more.
-
-```python
-def infer(self, inputs):
-    prompts = inputs["prompt"]
-    system_prompt = inputs.get("system_prompt","You are a helpful coding bot.")
-    temperature = inputs.get("temperature",0.7)
-    top_p = inputs.get("top_p",0.1)
-    repetition_penalty = inputs.get("repetition_penalty",1.18)
-    top_k = inputs.get("top_k",40)
-    max_tokens = inputs.get("max_tokens",256)
-```
-
-**Finalize** - This function is used to perform any cleanup activity for example you can unload the model from the gpu by setting to `None`.
-```python
-def finalize(self):
-    self.llm = None
 ```
 
 
